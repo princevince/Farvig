@@ -1,25 +1,33 @@
 
 public class KaartOpMaat {
+	// Je kunt je objecten hier lokaal bewaren.
+	private Size sizeObject;
+	private Background bgColorObject;
+	private Lettertype ltObject;
+	private Text textObject;
 
-		public void makeKaartOpMaat() {
-			
-		Size sizeObject = new Size();
-		sizeObject.cardSize();
+	// Hier initialiseer je de kaart.
+	public void makeKaartOpMaat() {			
+		sizeObject = new Size();
+		sizeObject.chooseCardSize();
 
-		Background bgcolorObject = new Background();
-		bgcolorObject.chooseColor();
+		bgColorObject = new Background();
+		bgColorObject.chooseColor();
 		
-		Lettertype typeObject = new Lettertype();
-		typeObject.chooseTypeLt();
+		ltObject = new Lettertype();
+		ltObject.chooseTypeLt();
+		ltObject.chooseColorLt();
+		ltObject.chooseSizeLt();
 		
-		Lettertype colorObj = new Lettertype();
-		colorObj.chooseColorLt();
-		
-		Lettertype sizeObj = new Lettertype();
-		sizeObj.chooseSizeLt();
-		
-		Text typObj = new Text();
-		typObj.inputText();
+		textObject = new Text();
+		textObject.inputText();
 	}
 
+	// En hier zou je de beschrijving kunnen opvragen
+	public String kaartBeschrijving() {
+		return "Deze kaart heeft de volgende specificaties:\n" +
+			"Size: " + sizeObject.getCardSize() + "\n" +
+			"Background color: " + bgColorObject.getColor() + "\n" +
+			"etc...";
+	}
 }

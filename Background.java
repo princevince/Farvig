@@ -10,13 +10,10 @@ public class Background {
 		Scanner keyboard = new Scanner(System.in);
 		
 		System.out.println("Welke kleur wil je als achtergrondkleur van je kaart?");
-		String answer = keyboard.nextLine();
-		answer = answer.toString();
-		
+		bgColor = keyboard.nextLine();
+	}
+
+	public String getColor() {
+		return bgColor;
 	}
 }
-		
-
-
-
-	
